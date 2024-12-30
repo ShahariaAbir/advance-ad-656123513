@@ -5,7 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="726677247460667629f2680172bcb3b05bed6853" content="726677247460667629f2680172bcb3b05bed6853" />
     <title>355675532465237</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <style>
         * {
             margin: 0;
@@ -37,7 +36,7 @@
 
         .ads-container {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
             gap: 20px;
             margin-bottom: 30px;
         }
@@ -50,28 +49,13 @@
             position: relative;
             min-height: 300px;
             overflow: hidden;
+            cursor: pointer;
         }
 
         .ad-content {
-            height: calc(100% - 40px);
-            overflow: hidden;
-        }
-
-        .ad-status {
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            right: 0;
-            padding: 10px;
-            background: rgba(255, 0, 0, 0.2);
-            color: white;
-            font-size: 12px;
-            text-align: center;
-            transition: all 0.3s ease;
-        }
-
-        .ad-status.completed {
-            background: rgba(0, 255, 0, 0.2);
+            height: 100%;
+            width: 100%;
+            position: relative;
         }
 
         .timer-circle {
@@ -79,16 +63,16 @@
             bottom: 40px;
             left: 50%;
             transform: translateX(-50%);
-            width: 30px;
-            height: 30px;
+            width: 32px;
+            height: 32px;
             display: none;
         }
 
-        .timer-circle.show {
+        .timer-circle.active {
             display: block;
         }
 
-        .timer-circle::before {
+        .timer-circle::after {
             content: '';
             position: absolute;
             width: 100%;
@@ -99,65 +83,50 @@
             animation: spin 1s linear infinite;
         }
 
-        .unlock-button-container {
+        .ad-status {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            padding: 10px;
+            background: rgba(255, 0, 0, 0.2);
+            color: white;
             text-align: center;
-            position: relative;
-            display: inline-flex;
-            align-items: center;
-            margin: 0 auto;
+            transition: all 0.3s ease;
+        }
+
+        .ad-status.completed {
+            background: rgba(0, 255, 0, 0.2);
         }
 
         .unlock-button {
-            background: linear-gradient(to right, #2575fc 0%, #6a11cb 0%);
+            background: linear-gradient(to right, #6a11cb, #2575fc);
             color: white;
             border: none;
             padding: 15px 40px;
             border-radius: 25px;
             font-size: 16px;
             cursor: not-allowed;
-            position: relative;
-            width: 250px;
+            opacity: 0.7;
             transition: all 0.3s ease;
             display: flex;
             align-items: center;
-            justify-content: center;
             gap: 10px;
+            margin: 0 auto;
+            min-width: 200px;
         }
 
         .unlock-button.unlocked {
+            background: linear-gradient(to right, #11998e, #38ef7d);
             cursor: pointer;
-            background: linear-gradient(45deg, #11998e, #38ef7d);
-        }
-
-        .lock-icon {
-            color: white;
-            font-size: 14px;
-            transition: all 0.3s ease;
-        }
-
-        .lock-icon.unlocked {
-            color: #38ef7d;
+            opacity: 1;
         }
 
         @keyframes spin {
-            0% { transform: rotate(0deg); }
-            100% { transform: rotate(360deg); }
-        }
-
-        .progress-fill {
-            position: absolute;
-            top: 0;
-            left: 0;
-            height: 100%;
-            background: linear-gradient(45deg, #2575fc, #6a11cb);
-            border-radius: 25px;
-            width: 0%;
-            transition: width 0.5s ease;
-            z-index: -1;
+            to { transform: rotate(360deg); }
         }
     </style>
 </head>
-
 <body>
     <div class="container">
         <div class="progress-header">
@@ -168,132 +137,150 @@
             <div class="ad-card" data-ad-id="1">
                 <div class="ad-content">
                     <script>
-(function(cufo){
-var d = document,
-    s = d.createElement('script'),
-    l = d.scripts[d.scripts.length - 1];
-s.settings = cufo || {};
-s.src = "\/\/luminoustry.com\/bGXcVYs.dBGUl\/0cY\/WwdIiNY\/WF5XuqZBXSIH\/ieJm\/9DuiZkU\/lQkaP-TlUQ5DNszmgh1\/NmjUEytwNYT\/kD3zO\/DcUD2BM\/gJ";
-s.async = true;
-s.referrerPolicy = 'no-referrer-when-downgrade';
-l.parentNode.insertBefore(s, l);
-})({})
-</script>
-
-                 </div>
+                    (function(cufo){
+                    var d = document,
+                        s = d.createElement('script'),
+                        l = d.scripts[d.scripts.length - 1];
+                    s.settings = cufo || {};
+                    s.src = "//luminoustry.com/bGXcVYs.dBGUl/0cY/WwdIiNY/WF5XuqZBXSIH/ieJm/9DuiZkU/lQkaP-TlUQ5DNszmgh1/NmjUEytwNYT/kD3zO/DcUD2BM/gJ";
+                    s.async = true;
+                    s.referrerPolicy = 'no-referrer-when-downgrade';
+                    l.parentNode.insertBefore(s, l);
+                    })({})
+                    </script>
+                </div>
                 <div class="timer-circle"></div>
                 <div class="ad-status">Not Completed</div>
             </div>
-<div class="ad-card" data-ad-id="1">
+
+            <div class="ad-card" data-ad-id="2">
                 <div class="ad-content">
                     <script>
-(function(cufo){
-var d = document,
-    s = d.createElement('script'),
-    l = d.scripts[d.scripts.length - 1];
-s.settings = cufo || {};
-s.src = "\/\/luminoustry.com\/bGXcVYs.dBGUl\/0cY\/WwdIiNY\/WF5XuqZBXSIH\/ieJm\/9DuiZkU\/lQkaP-TlUQ5DNszmgh1\/NmjUEytwNYT\/kD3zO\/DcUD2BM\/gJ";
-s.async = true;
-s.referrerPolicy = 'no-referrer-when-downgrade';
-l.parentNode.insertBefore(s, l);
-})({})
-</script>
-
-                 </div>
+                    (function(cufo){
+                    var d = document,
+                        s = d.createElement('script'),
+                        l = d.scripts[d.scripts.length - 1];
+                    s.settings = cufo || {};
+                    s.src = "//luminoustry.com/bGXcVYs.dBGUl/0cY/WwdIiNY/WF5XuqZBXSIH/ieJm/9DuiZkU/lQkaP-TlUQ5DNszmgh1/NmjUEytwNYT/kD3zO/DcUD2BM/gJ";
+                    s.async = true;
+                    s.referrerPolicy = 'no-referrer-when-downgrade';
+                    l.parentNode.insertBefore(s, l);
+                    })({})
+                    </script>
+                </div>
                 <div class="timer-circle"></div>
                 <div class="ad-status">Not Completed</div>
             </div>
 
-<div class="ad-card" data-ad-id="1">
+            <div class="ad-card" data-ad-id="3">
                 <div class="ad-content">
                     <script>
-(function(cufo){
-var d = document,
-    s = d.createElement('script'),
-    l = d.scripts[d.scripts.length - 1];
-s.settings = cufo || {};
-s.src = "\/\/luminoustry.com\/bGXcVYs.dBGUl\/0cY\/WwdIiNY\/WF5XuqZBXSIH\/ieJm\/9DuiZkU\/lQkaP-TlUQ5DNszmgh1\/NmjUEytwNYT\/kD3zO\/DcUD2BM\/gJ";
-s.async = true;
-s.referrerPolicy = 'no-referrer-when-downgrade';
-l.parentNode.insertBefore(s, l);
-})({})
-</script>
-
-                 </div>
+                    (function(cufo){
+                    var d = document,
+                        s = d.createElement('script'),
+                        l = d.scripts[d.scripts.length - 1];
+                    s.settings = cufo || {};
+                    s.src = "//luminoustry.com/bGXcVYs.dBGUl/0cY/WwdIiNY/WF5XuqZBXSIH/ieJm/9DuiZkU/lQkaP-TlUQ5DNszmgh1/NmjUEytwNYT/kD3zO/DcUD2BM/gJ";
+                    s.async = true;
+                    s.referrerPolicy = 'no-referrer-when-downgrade';
+                    l.parentNode.insertBefore(s, l);
+                    })({})
+                    </script>
+                </div>
                 <div class="timer-circle"></div>
                 <div class="ad-status">Not Completed</div>
             </div>
-<div class="ad-card" data-ad-id="1">
+
+            <div class="ad-card" data-ad-id="4">
                 <div class="ad-content">
                     <script>
-(function(cufo){
-var d = document,
-    s = d.createElement('script'),
-    l = d.scripts[d.scripts.length - 1];
-s.settings = cufo || {};
-s.src = "\/\/luminoustry.com\/bGXcVYs.dBGUl\/0cY\/WwdIiNY\/WF5XuqZBXSIH\/ieJm\/9DuiZkU\/lQkaP-TlUQ5DNszmgh1\/NmjUEytwNYT\/kD3zO\/DcUD2BM\/gJ";
-s.async = true;
-s.referrerPolicy = 'no-referrer-when-downgrade';
-l.parentNode.insertBefore(s, l);
-})({})
-</script>
-
-                 </div>
+                    (function(cufo){
+                    var d = document,
+                        s = d.createElement('script'),
+                        l = d.scripts[d.scripts.length - 1];
+                    s.settings = cufo || {};
+                    s.src = "//luminoustry.com/bGXcVYs.dBGUl/0cY/WwdIiNY/WF5XuqZBXSIH/ieJm/9DuiZkU/lQkaP-TlUQ5DNszmgh1/NmjUEytwNYT/kD3zO/DcUD2BM/gJ";
+                    s.async = true;
+                    s.referrerPolicy = 'no-referrer-when-downgrade';
+                    l.parentNode.insertBefore(s, l);
+                    })({})
+                    </script>
+                </div>
                 <div class="timer-circle"></div>
                 <div class="ad-status">Not Completed</div>
             </div>
-
-
-            <!-- Repeat for other ad cards with different IDs -->
-            <!-- Similar structure for ads 2-4 -->
         </div>
 
-        <div style="text-align: center;">
-            <div class="unlock-button-container">
-                <button class="unlock-button" disabled>
-                    <div class="progress-fill"></div>
-                    <i class="fas fa-lock lock-icon"></i>
-                    <span>Continue</span>
-                </button>
-            </div>
-        </div>
+        <button class="unlock-button" id="unlockButton" disabled>
+            <span id="lockIcon">🔒</span>
+            <span>Continue</span>
+        </button>
     </div>
 
     <script>
-        const REQUIRED_TIME = 3000; // 3 seconds
-        const REQUIRED_ADS = 4;
+        const REQUIRED_TIME = 3000;
         let completedAds = new Set();
-        let adTimers = {};
 
-        // Store the time when user clicked the ad
-        function storeAdClickTime(adId) {
-            const timestamp = new Date().getTime();
-            localStorage.setItem(`ad_${adId}_click`, timestamp);
-        }
+        const loadCompletedAds = () => {
+            const saved = sessionStorage.getItem('completedAds');
+            if (saved) {
+                completedAds = new Set(JSON.parse(saved));
+                updateUI();
+            }
+        };
 
-        // Check if enough time has passed since ad click
-        function checkAdCompletion(adId) {
-            const clickTime = localStorage.getItem(`ad_${adId}_click`);
-            if (!clickTime) return false;
+        const saveCompletedAds = () => {
+            sessionStorage.setItem('completedAds', JSON.stringify([...completedAds]));
+        };
 
-            const currentTime = new Date().getTime();
-            const timeSpent = currentTime - parseInt(clickTime);
-            return timeSpent >= REQUIRED_TIME;
-        }
-
-        // Handle ad link clicks
-        document.querySelectorAll('.ad-link').forEach(link => {
-            link.addEventListener('click', (e) => {
-                const adId = link.getAttribute('data-ad-id');
-                storeAdClickTime(adId);
+        document.querySelectorAll('.ad-card').forEach(card => {
+            card.addEventListener('click', () => {
+                const adId = card.dataset.adId;
+                if (completedAds.has(adId)) return;
+                
+                localStorage.setItem(`ad_${adId}_click`, Date.now().toString());
+                const timer = card.querySelector('.timer-circle');
+                timer.classList.add('active');
             });
         });
 
-        // Handle when user returns to the page
+        const checkAdCompletion = (adId) => {
+            const clickTime = localStorage.getItem(`ad_${adId}_click`);
+            if (!clickTime) return false;
+            return Date.now() - parseInt(clickTime) >= REQUIRED_TIME;
+        };
+
+        const completeAd = (adId) => {
+            if (completedAds.has(adId)) return;
+            completedAds.add(adId);
+            saveCompletedAds();
+            
+            const card = document.querySelector(`[data-ad-id="${adId}"]`);
+            const timer = card.querySelector('.timer-circle');
+            const status = card.querySelector('.ad-status');
+            
+            timer.classList.remove('active');
+            status.textContent = 'Completed';
+            status.classList.add('completed');
+            
+            updateUI();
+        };
+
+        const updateUI = () => {
+            const button = document.getElementById('unlockButton');
+            const lockIcon = document.getElementById('lockIcon');
+
+            if (completedAds.size >= 4) {
+                button.disabled = false;
+                button.classList.add('unlocked');
+                lockIcon.textContent = '🔓';
+            }
+        };
+
         document.addEventListener('visibilitychange', () => {
             if (document.visibilityState === 'visible') {
-                document.querySelectorAll('.ad-card').forEach(adCard => {
-                    const adId = adCard.dataset.adId;
+                document.querySelectorAll('.ad-card').forEach(card => {
+                    const adId = card.dataset.adId;
                     if (!completedAds.has(adId) && checkAdCompletion(adId)) {
                         completeAd(adId);
                         localStorage.removeItem(`ad_${adId}_click`);
@@ -302,60 +289,8 @@ l.parentNode.insertBefore(s, l);
             }
         });
 
-        const loadCompletedAds = () => {
-            const saved = sessionStorage.getItem('completedAds');
-            if (saved) {
-                completedAds = new Set(JSON.parse(saved));
-                updateProgress();
-                // Update UI for completed ads
-                completedAds.forEach(adId => {
-                    const adCard = document.querySelector(`[data-ad-id="${adId}"]`);
-                    if (adCard) {
-                        const adStatus = adCard.querySelector('.ad-status');
-                        adStatus.textContent = 'Completed';
-                        adStatus.classList.add('completed');
-                    }
-                });
-            }
-        };
-
-        const saveCompletedAds = () => {
-            sessionStorage.setItem('completedAds', JSON.stringify([...completedAds]));
-        };
-
-        const updateProgress = () => {
-            const progressFill = document.querySelector('.progress-fill');
-            const button = document.querySelector('.unlock-button');
-            const lockIcon = button.querySelector('.lock-icon');
-            const completedCount = completedAds.size;
-            const progressPercent = (completedCount / REQUIRED_ADS) * 100;
-            
-            progressFill.style.width = `${progressPercent}%`;
-
-            if (completedCount >= REQUIRED_ADS) {
-                button.disabled = false;
-                button.classList.add('unlocked');
-                lockIcon.classList.remove('fa-lock');
-                lockIcon.classList.add('fa-lock-open');
-            }
-        };
-
-        const completeAd = (adId) => {
-            const adCard = document.querySelector(`[data-ad-id="${adId}"]`);
-            const adStatus = adCard.querySelector('.ad-status');
-            
-            if (!completedAds.has(adId)) {
-                completedAds.add(adId);
-                adStatus.textContent = 'Completed';
-                adStatus.classList.add('completed');
-                
-                saveCompletedAds();
-                updateProgress();
-            }
-        };
-
-        document.querySelector('.unlock-button').addEventListener('click', () => {
-            if (completedAds.size >= REQUIRED_ADS) {
+        document.getElementById('unlockButton').addEventListener('click', () => {
+            if (completedAds.size >= 4) {
                 window.location.href = "https://example.com";
             }
         });
