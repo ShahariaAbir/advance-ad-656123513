@@ -3,142 +3,110 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="726677247460667629f2680172bcb3b05bed6853" content="726677247460667629f2680172bcb3b05bed6853" />
+   <meta name="726677247460667629f2680172bcb3b05bed6853" content="726677247460667629f2680172bcb3b05bed6853" />
     <title>355675532465237</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <style>
 
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <style>
-{
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
         body {
+            margin: 0;
             min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
             background: linear-gradient(45deg, #6a11cb, #2575fc);
             font-family: Arial, sans-serif;
-            padding: 20px;
         }
 
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-        }
-
-        .progress-header {
-            background: rgba(255, 255, 255, 0.1);
-            backdrop-filter: blur(10px);
-            padding: 15px;
-            border-radius: 10px;
-            color: white;
-            text-align: center;
-            margin-bottom: 20px;
-        }
-
-        .ads-container {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 20px;
-            margin-bottom: 30px;
-        }
-
-        .ad-card {
+        .glass-card {
             background: rgba(255, 255, 255, 0.1);
             backdrop-filter: blur(10px);
             border-radius: 15px;
-            padding: 15px;
-            position: relative;
-            min-height: 300px;
-            overflow: hidden;
-        }
-
-        .ad-content {
-            height: calc(100% - 40px);
-            overflow: hidden;
-        }
-
-        .ad-status {
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            right: 0;
-            padding: 10px;
-            background: rgba(255, 0, 0, 0.2);
-            color: white;
-            font-size: 12px;
+            padding: 20px;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+            width: 300px;
             text-align: center;
+        }
+
+        .ad-container {
+            margin-bottom: 20px;
+            min-height: 250px;
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 10px;
+            padding: 10px;
+        }
+
+        .button-container {
+            position: relative;
+        }
+
+        .unlock-button {
+            background: linear-gradient(45deg, #2575fc, #6a11cb);
+            color: white;
+            border: none;
+            padding: 12px 24px;
+            border-radius: 25px;
+            cursor: not-allowed;
+            opacity: 0.7;
             transition: all 0.3s ease;
+            width: 200px;
+            font-size: 16px;
+            position: relative;
         }
 
-        .ad-status.completed {
-            background: rgba(0, 255, 0, 0.2);
+        .unlock-button.unlocked {
+            cursor: pointer;
+            opacity: 1;
+            background: linear-gradient(45deg, #11998e, #38ef7d);
         }
 
-        .timer-circle {
+        .lock-icon {
             position: absolute;
-            bottom: 40px;
-            left: 50%;
-            transform: translateX(-50%);
-            width: 30px;
-            height: 30px;
-            display: none;
+            right: 30px;
+            top: 50%;
+            transform: translateY(-50%);
+            color: white;
+            font-size: 18px;
+            transition: all 0.5s ease;
         }
 
-        .timer-circle.show {
+        .lock-icon.hidden {
+            opacity: 0;
+            transform: translateY(-50%) scale(0);
+        }
+
+        .message {
+            color: white;
+            margin-bottom: 15px;
+            font-size: 14px;
+        }
+
+        /* Loading Animation */
+        .loading-ring {
+            display: none;
+            position: absolute;
+            right: 30px;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 20px;
+            height: 20px;
+        }
+
+        .loading-ring.show {
             display: block;
         }
 
-        .timer-circle::before {
+        .loading-ring:before {
             content: '';
             position: absolute;
             width: 100%;
             height: 100%;
             border-radius: 50%;
-            border: 3px solid rgba(255, 255, 255, 0.1);
+            border: 2px solid transparent;
             border-top-color: white;
             animation: spin 1s linear infinite;
-        }
-
-        .unlock-button-container {
-            text-align: center;
-            position: relative;
-            display: inline-flex;
-            align-items: center;
-            margin: 0 auto;
-        }
-
-        .unlock-button {
-            background: linear-gradient(to right, #2575fc 0%, #6a11cb 0%);
-            color: white;
-            border: none;
-            padding: 15px 40px;
-            border-radius: 25px;
-            font-size: 16px;
-            cursor: not-allowed;
-            position: relative;
-            width: 250px;
-            transition: all 0.3s ease;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 10px;
-        }
-
-        .unlock-button.unlocked {
-            cursor: pointer;
-            background: linear-gradient(45deg, #11998e, #38ef7d);
-        }
-
-        .lock-icon {
-            color: white;
-            font-size: 14px;
-            transition: all 0.3s ease;
-        }
-
-        .lock-icon.unlocked {
-            color: #38ef7d;
         }
 
         @keyframes spin {
@@ -146,214 +114,150 @@
             100% { transform: rotate(360deg); }
         }
 
-        .progress-fill {
+        /* Premium Lock Effects */
+        .lock-icon {
+            text-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
+        }
+
+        .lock-icon.unlocking {
+            animation: unlockAnimation 0.5s ease forwards;
+        }
+
+        @keyframes unlockAnimation {
+            0% { transform: translateY(-50%) rotate(0); }
+            100% { transform: translateY(-50%) rotate(360deg); }
+        }
+
+        /* Premium Button Effects */
+        .unlock-button {
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+            transition: all 0.3s ease;
+        }
+
+        .unlock-button.unlocked:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.25);
+        }
+
+        .unlock-button::after {
+            content: '';
             position: absolute;
-            top: 0;
-            left: 0;
-            height: 100%;
+            top: -2px;
+            left: -2px;
+            right: -2px;
+            bottom: -2px;
             background: linear-gradient(45deg, #2575fc, #6a11cb);
-            border-radius: 25px;
-            width: 0%;
-            transition: width 0.5s ease;
             z-index: -1;
+            border-radius: 26px;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .unlock-button.unlocked::after {
+            background: linear-gradient(45deg, #11998e, #38ef7d);
+        }
+
+        .unlock-button:hover::after {
+            opacity: 0.3;
         }
     </style>
-/* ... (keep existing styles) ... */
-   </head>
+</head>
 <body>
-    <div class="container">
-        <div class="progress-header">
-            Click any 4 ads and stay for 2 seconds to unlock
+    <div class="glass-card">
+        <div class="message">Click the ad to unlock the button</div>
+        <div class="ad-container">
+            <script>
+(function(cufo){
+var d = document,
+    s = d.createElement('script'),
+    l = d.scripts[d.scripts.length - 1];
+s.settings = cufo || {};
+s.src = "\/\/luminoustry.com\/bGXcVYs.dBGUl\/0cY\/WwdIiNY\/WF5XuqZBXSIH\/ieJm\/9DuiZkU\/lQkaP-TlUQ5DNszmgh1\/NmjUEytwNYT\/kD3zO\/DcUD2BM\/gJ";
+s.async = true;
+s.referrerPolicy = 'no-referrer-when-downgrade';
+l.parentNode.insertBefore(s, l);
+})({})
+</script>
+
+                  </div>
+        <div class="button-container">
+            <button class="unlock-button" id="unlockButton" disabled>Continue</button>
+            <i class="fas fa-lock lock-icon" id="lockIcon"></i>
+            <div class="loading-ring" id="loadingRing"></div>
         </div>
-        
-        <div class="ads-container">
-            <div class="ad-card" data-ad-id="1">
-                <div class="ad-content">
-                    <script>
-(function(cufo){
-var d = document,
-    s = d.createElement('script'),
-    l = d.scripts[d.scripts.length - 1];
-s.settings = cufo || {};
-s.src = "\/\/luminoustry.com\/bGXcVYs.dBGUl\/0cY\/WwdIiNY\/WF5XuqZBXSIH\/ieJm\/9DuiZkU\/lQkaP-TlUQ5DNszmgh1\/NmjUEytwNYT\/kD3zO\/DcUD2BM\/gJ";
-s.async = true;
-s.referrerPolicy = 'no-referrer-when-downgrade';
-l.parentNode.insertBefore(s, l);
-})({})
-</script>
-
-                 </div>
-                <div class="timer-circle"></div>
-                <div class="ad-status">Not Completed</div>
-            </div>
-<div class="ad-card" data-ad-id="1">
-                <div class="ad-content">
-                    <script>
-(function(cufo){
-var d = document,
-    s = d.createElement('script'),
-    l = d.scripts[d.scripts.length - 1];
-s.settings = cufo || {};
-s.src = "\/\/luminoustry.com\/bGXcVYs.dBGUl\/0cY\/WwdIiNY\/WF5XuqZBXSIH\/ieJm\/9DuiZkU\/lQkaP-TlUQ5DNszmgh1\/NmjUEytwNYT\/kD3zO\/DcUD2BM\/gJ";
-s.async = true;
-s.referrerPolicy = 'no-referrer-when-downgrade';
-l.parentNode.insertBefore(s, l);
-})({})
-</script>
-
-                 </div>
-                <div class="timer-circle"></div>
-                <div class="ad-status">Not Completed</div>
-            </div>
-
-<div class="ad-card" data-ad-id="1">
-                <div class="ad-content">
-                    <script>
-(function(cufo){
-var d = document,
-    s = d.createElement('script'),
-    l = d.scripts[d.scripts.length - 1];
-s.settings = cufo || {};
-s.src = "\/\/luminoustry.com\/bGXcVYs.dBGUl\/0cY\/WwdIiNY\/WF5XuqZBXSIH\/ieJm\/9DuiZkU\/lQkaP-TlUQ5DNszmgh1\/NmjUEytwNYT\/kD3zO\/DcUD2BM\/gJ";
-s.async = true;
-s.referrerPolicy = 'no-referrer-when-downgrade';
-l.parentNode.insertBefore(s, l);
-})({})
-</script>
-
-                 </div>
-                <div class="timer-circle"></div>
-                <div class="ad-status">Not Completed</div>
-            </div>
-<div class="ad-card" data-ad-id="1">
-                <div class="ad-content">
-                    <script>
-(function(cufo){
-var d = document,
-    s = d.createElement('script'),
-    l = d.scripts[d.scripts.length - 1];
-s.settings = cufo || {};
-s.src = "\/\/luminoustry.com\/bGXcVYs.dBGUl\/0cY\/WwdIiNY\/WF5XuqZBXSIH\/ieJm\/9DuiZkU\/lQkaP-TlUQ5DNszmgh1\/NmjUEytwNYT\/kD3zO\/DcUD2BM\/gJ";
-s.async = true;
-s.referrerPolicy = 'no-referrer-when-downgrade';
-l.parentNode.insertBefore(s, l);
-})({})
-</script>
-
-                 </div>
-                <div class="timer-circle"></div>
-                <div class="ad-status">Not Completed</div>
-            </div>
-
-
-            <!-- Repeat for other ad cards with different IDs -->
-            <!-- Similar structure for ads 2-4 -->
-        </div>
-
-        </div>
-
-        <button class="unlock-button" id="unlockButton">
-            <span id="lockIcon">🔒</span>
-            <span>Continue</span>
-        </button>
     </div>
 
     <script>
-        const REQUIRED_TIME = 2000; // 2 seconds in milliseconds
-        let completedAds = new Set();
-        let adStartTimes = {};
+        const button = document.getElementById('unlockButton');
+        const lockIcon = document.getElementById('lockIcon');
+        const loadingRing = document.getElementById('loadingRing');
+        const adContainer = document.querySelector('.ad-container');
 
-        // Load completed ads from storage
-        const loadCompletedAds = () => {
-            const saved = sessionStorage.getItem('completedAds');
-            if (saved) {
-                completedAds = new Set(JSON.parse(saved));
-                updateUI();
-            }
-        };
+        // Check if the button was previously unlocked
+        const isUnlocked = sessionStorage.getItem('buttonUnlocked');
+        if (isUnlocked === 'true') {
+            unlockButton(false);
+        }
 
-        // Save completed ads to storage
-        const saveCompletedAds = () => {
-            sessionStorage.setItem('completedAds', JSON.stringify([...completedAds]));
-        };
-
-        // Handle ad card clicks
-        document.querySelectorAll('.ad-card').forEach(card => {
-            card.addEventListener('click', () => {
-                const adId = card.dataset.adId;
-                if (completedAds.has(adId)) return;
+        // Function to unlock the button
+        function unlockButton(withAnimation = true) {
+            if (withAnimation) {
+                // Show loading animation
+                loadingRing.classList.add('show');
+                lockIcon.style.display = 'block';
                 
-                // Store the start time
-                adStartTimes[adId] = Date.now();
-                
-                // Open ad in new tab
-                window.open('https://example.com', '_blank');
-            });
-        });
-
-        // Check if an ad should be marked as completed
-        const checkAdCompletion = (adId) => {
-            const startTime = adStartTimes[adId];
-            if (!startTime) return false;
-            
-            const timeSpent = Date.now() - startTime;
-            return timeSpent >= REQUIRED_TIME;
-        };
-
-        // Mark an ad as completed
-        const completeAd = (adId) => {
-            if (completedAds.has(adId)) return;
-            
-            completedAds.add(adId);
-            saveCompletedAds();
-            
-            const card = document.querySelector(`[data-ad-id="${adId}"]`);
-            const status = card.querySelector('.ad-status');
-            
-            status.textContent = 'Completed';
-            status.classList.add('completed');
-            
-            updateUI();
-        };
-
-        // Update the UI based on completion status
-        const updateUI = () => {
-            const button = document.getElementById('unlockButton');
-            const lockIcon = document.getElementById('lockIcon');
-
-            button.disabled = completedAds.size < 4;
-
-            if (completedAds.size >= 4) {
-                button.classList.add('unlocked');
-                lockIcon.textContent = '🔓';
+                setTimeout(() => {
+                    // Start unlock animation
+                    lockIcon.classList.add('unlocking');
+                    
+                    setTimeout(() => {
+                        // Hide loading and change lock icon
+                        loadingRing.classList.remove('show');
+                        lockIcon.classList.remove('fa-lock');
+                        lockIcon.classList.add('fa-lock-open');
+                        
+                        setTimeout(() => {
+                            // Hide lock icon and enable button
+                            lockIcon.classList.add('hidden');
+                            button.classList.add('unlocked');
+                            button.disabled = false;
+                        }, 500);
+                    }, 1000);
+                }, 1500);
             } else {
-                button.classList.remove('unlocked');
-                lockIcon.textContent = '🔒';
+                // Instant unlock without animation
+                lockIcon.classList.add('hidden');
+                button.classList.add('unlocked');
+                button.disabled = false;
             }
-        };
+            sessionStorage.setItem('buttonUnlocked', 'true');
+        }
 
-        // Check completion when tab becomes visible
+        // Store the timestamp when leaving the page
+        let leaveTimestamp;
         document.addEventListener('visibilitychange', () => {
-            if (document.visibilityState === 'visible') {
-                Object.keys(adStartTimes).forEach(adId => {
-                    if (!completedAds.has(adId) && checkAdCompletion(adId)) {
-                        completeAd(adId);
-                        delete adStartTimes[adId];
-                    }
-                });
+            if (document.visibilityState === 'hidden') {
+                leaveTimestamp = new Date().getTime();
+            } else if (document.visibilityState === 'visible') {
+                // If returning after at least 2 seconds, unlock the button
+                const returnTimestamp = new Date().getTime();
+                if (leaveTimestamp && (returnTimestamp - leaveTimestamp) > 2000) {
+                    unlockButton(true);
+                }
             }
         });
 
-        // Handle unlock button click
-        document.getElementById('unlockButton').addEventListener('click', () => {
-            if (completedAds.size >= 4) {
-                window.location.href = "https://example.com";
-            }
+        // Add click event listener to the ad container
+        adContainer.addEventListener('click', () => {
+            leaveTimestamp = new Date().getTime();
         });
 
-        // Initialize
-        document.getElementById('unlockButton').disabled = true;
-        loadCompletedAds();
+        // Add click event listener to the button
+        button.addEventListener('click', () => {
+            if (!button.disabled) {
+                window.location.href = "https://example.com"; // Replace with your desired URL
+            }
+        });
     </script>
 </body>
 </html>
