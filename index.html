@@ -210,94 +210,108 @@ l.parentNode.insertBefore(s, l);
         </div>
     </div>
 
-    <script>
-        const button = document.getElementById('unlockButton');
-        const lockIcon = document.getElementById('lockIcon');
-        const progressText = document.querySelector('.progress-text');
-        const adContainers = document.querySelectorAll('.ad-container');
+    <!-- Previous HTML and CSS code remains exactly the same until the script section -->
+
+<script>
+    const button = document.getElementById('unlockButton');
+    const lockIcon = document.getElementById('lockIcon');
+    const progressText = document.querySelector('.progress-text');
+    const adContainers = document.querySelectorAll('.ad-container');
+    
+    let completedAds = new Set();
+    let leaveTimestamps = {};
+    let activeAdId = null;
+
+    // Initialize from session storage
+    const storedProgress = JSON.parse(sessionStorage.getItem('completedAds') || '[]');
+    completedAds = new Set(storedProgress);
+    updateProgress();
+
+    // Update UI for completed ads
+    completedAds.forEach(adId => {
+        const adContainer = document.querySelector(`[data-ad-id="${adId}"]`);
+        if (adContainer) {
+            adContainer.classList.add('completed');
+            adContainer.querySelector('.ad-status').textContent = 'Completed';
+        }
+    });
+
+    // Handle page visibility changes
+    document.addEventListener('visibilitychange', () => {
+        const currentTime = new Date().getTime();
         
-        let completedAds = new Set();
-
-        // Check if there's any progress in session storage
-        const storedProgress = JSON.parse(sessionStorage.getItem('completedAds') || '[]');
-        completedAds = new Set(storedProgress);
-        updateProgress();
-
-        // Update UI based on stored progress
-        completedAds.forEach(adId => {
-            const adContainer = document.querySelector(`[data-ad-id="${adId}"]`);
-            if (adContainer) {
-                adContainer.classList.add('completed');
-                adContainer.querySelector('.ad-status').textContent = 'Completed';
+        if (document.visibilityState === 'hidden') {
+            // User left the page
+            if (activeAdId) {
+                leaveTimestamps[activeAdId] = currentTime;
+                console.log('Left page with ad:', activeAdId);
             }
-        });
-
-        let leaveTimestamp = {};
-
-        document.addEventListener('visibilitychange', () => {
-            if (document.visibilityState === 'hidden') {
-                const currentTime = new Date().getTime();
-                Object.keys(leaveTimestamp).forEach(adId => {
-                    if (leaveTimestamp[adId]) {
-                        leaveTimestamp[adId] = currentTime;
-                    }
-                });
-            } else if (document.visibilityState === 'visible') {
-                const returnTimestamp = new Date().getTime();
-                Object.keys(leaveTimestamp).forEach(adId => {
-                    if (leaveTimestamp[adId] && (returnTimestamp - leaveTimestamp[adId]) > 2000) {
-                        completeAd(adId);
-                        leaveTimestamp[adId] = null;
-                    }
-                });
-            }
-        });
-
-        adContainers.forEach(container => {
-            container.addEventListener('click', () => {
-                const adId = container.dataset.adId;
-                if (!completedAds.has(adId)) {
-                    leaveTimestamp[adId] = new Date().getTime();
-                }
-            });
-        });
-
-        function completeAd(adId) {
-            if (!completedAds.has(adId)) {
-                completedAds.add(adId);
-                const adContainer = document.querySelector(`[data-ad-id="${adId}"]`);
-                adContainer.classList.add('completed');
-                adContainer.querySelector('.ad-status').textContent = 'Completed';
+        } else if (document.visibilityState === 'visible') {
+            // User returned to the page
+            if (activeAdId && leaveTimestamps[activeAdId]) {
+                const timeSpent = currentTime - leaveTimestamps[activeAdId];
+                console.log('Time spent:', timeSpent);
                 
-                sessionStorage.setItem('completedAds', JSON.stringify([...completedAds]));
-                updateProgress();
+                if (timeSpent >= 2000) { // 2 seconds
+                    completeAd(activeAdId);
+                }
+                
+                // Reset tracking
+                leaveTimestamps[activeAdId] = null;
+                activeAdId = null;
             }
         }
+    });
 
-        function updateProgress() {
-            const completedCount = completedAds.size;
-            progressText.textContent = `${completedCount}/4 ads completed`;
-
-            if (completedCount === 4) {
-                unlockButton();
-            }
-        }
-
-        function unlockButton() {
-            lockIcon.classList.add('unlocking');
-            setTimeout(() => {
-                lockIcon.classList.add('hidden');
-                button.classList.add('unlocked');
-                button.disabled = false;
-                progressText.textContent = 'All ads completed!';
-            }, 500);
-        }
-
-        button.addEventListener('click', () => {
-            if (!button.disabled) {
-                window.location.href = "https://example.com"; // Replace with your desired URL
+    // Add click handlers to ad containers
+    adContainers.forEach(container => {
+        container.addEventListener('click', () => {
+            const adId = container.dataset.adId;
+            if (!completedAds.has(adId)) {
+                activeAdId = adId;
+                console.log('Clicked ad:', adId);
             }
         });
-    </script>
+    });
+
+    function completeAd(adId) {
+        if (!completedAds.has(adId)) {
+            console.log('Completing ad:', adId);
+            completedAds.add(adId);
+            
+            const adContainer = document.querySelector(`[data-ad-id="${adId}"]`);
+            adContainer.classList.add('completed');
+            adContainer.querySelector('.ad-status').textContent = 'Completed';
+            
+            sessionStorage.setItem('completedAds', JSON.stringify([...completedAds]));
+            updateProgress();
+        }
+    }
+
+    function updateProgress() {
+        const completedCount = completedAds.size;
+        progressText.textContent = `${completedCount}/4 ads completed`;
+
+        if (completedCount === 4) {
+            unlockButton();
+        }
+    }
+
+    function unlockButton() {
+        lockIcon.classList.add('unlocking');
+        setTimeout(() => {
+            lockIcon.classList.add('hidden');
+            button.classList.add('unlocked');
+            button.disabled = false;
+            progressText.textContent = 'All ads completed!';
+        }, 500);
+    }
+
+    button.addEventListener('click', () => {
+        if (!button.disabled) {
+            window.location.href = "https://example.com"; // Replace with your desired URL
+        }
+    });
+</script>
 </body>
 </html>
