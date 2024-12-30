@@ -49,6 +49,12 @@
             padding: 15px;
             position: relative;
             min-height: 300px;
+            overflow: hidden;
+        }
+
+        .ad-content {
+            height: calc(100% - 40px);
+            overflow: hidden;
         }
 
         .ad-status {
@@ -61,8 +67,6 @@
             color: white;
             font-size: 12px;
             text-align: center;
-            border-bottom-left-radius: 15px;
-            border-bottom-right-radius: 15px;
             transition: all 0.3s ease;
         }
 
@@ -98,6 +102,9 @@
         .unlock-button-container {
             text-align: center;
             position: relative;
+            display: inline-flex;
+            align-items: center;
+            margin: 0 auto;
         }
 
         .unlock-button {
@@ -111,21 +118,15 @@
             position: relative;
             width: 250px;
             transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
         }
 
         .unlock-button.unlocked {
             cursor: pointer;
             background: linear-gradient(45deg, #11998e, #38ef7d);
-        }
-
-        .lock-container {
-            position: absolute;
-            right: -40px;
-            top: 50%;
-            transform: translateY(-50%);
-            display: flex;
-            flex-direction: column;
-            gap: 5px;
         }
 
         .lock-icon {
@@ -143,7 +144,6 @@
             100% { transform: rotate(360deg); }
         }
 
-        /* Progress bar inside button */
         .progress-fill {
             position: absolute;
             top: 0;
@@ -157,222 +157,209 @@
         }
     </style>
 </head>
+
 <body>
     <div class="container">
         <div class="progress-header">
-            Complete any 4 ads to unlock the button
+            Click any 4 ads and stay for 3 seconds to unlock
         </div>
         
         <div class="ads-container">
-            <!-- Ad Cards (5 of them) -->
             <div class="ad-card" data-ad-id="1">
                 <div class="ad-content">
-                    <!-- Ad Script 1 -->
                     <script>
-(function(yfrx){
+(function(cufo){
 var d = document,
     s = d.createElement('script'),
     l = d.scripts[d.scripts.length - 1];
-s.settings = yfrx || {};
-s.src = "\/\/luminoustry.com\/b\/X.VCsCdXGUly0AYwWcdSiDYxWq5ou\/ZFX\/Iz\/QeJm\/9CuSZQUBlNkzP\/TqUJ5FNKzegx1tMFzGMxt\/N\/TQk\/3pORDvUWzbNCAH";
+s.settings = cufo || {};
+s.src = "\/\/luminoustry.com\/bGXcVYs.dBGUl\/0cY\/WwdIiNY\/WF5XuqZBXSIH\/ieJm\/9DuiZkU\/lQkaP-TlUQ5DNszmgh1\/NmjUEytwNYT\/kD3zO\/DcUD2BM\/gJ";
 s.async = true;
 s.referrerPolicy = 'no-referrer-when-downgrade';
 l.parentNode.insertBefore(s, l);
 })({})
 </script>
-                </div>
+
+                 </div>
                 <div class="timer-circle"></div>
                 <div class="ad-status">Not Completed</div>
             </div>
-            <!-- Repeat for 4 more ad cards -->
-            <div class="ad-card" data-ad-id="2">
-                <div class="ad-content">
-                   <script>
-(function(yfrx){
-var d = document,
-    s = d.createElement('script'),
-    l = d.scripts[d.scripts.length - 1];
-s.settings = yfrx || {};
-s.src = "\/\/luminoustry.com\/b\/X.VCsCdXGUly0AYwWcdSiDYxWq5ou\/ZFX\/Iz\/QeJm\/9CuSZQUBlNkzP\/TqUJ5FNKzegx1tMFzGMxt\/N\/TQk\/3pORDvUWzbNCAH";
-s.async = true;
-s.referrerPolicy = 'no-referrer-when-downgrade';
-l.parentNode.insertBefore(s, l);
-})({})
-</script>
-                </div>
-                <div class="timer-circle"></div>
-                <div class="ad-status">Not Completed</div>
-            </div>
-            <div class="ad-card" data-ad-id="3">
-                <div class="ad-content">
-                   <script>
-(function(yfrx){
-var d = document,
-    s = d.createElement('script'),
-    l = d.scripts[d.scripts.length - 1];
-s.settings = yfrx || {};
-s.src = "\/\/luminoustry.com\/b\/X.VCsCdXGUly0AYwWcdSiDYxWq5ou\/ZFX\/Iz\/QeJm\/9CuSZQUBlNkzP\/TqUJ5FNKzegx1tMFzGMxt\/N\/TQk\/3pORDvUWzbNCAH";
-s.async = true;
-s.referrerPolicy = 'no-referrer-when-downgrade';
-l.parentNode.insertBefore(s, l);
-})({})
-</script>
-                </div>
-                <div class="timer-circle"></div>
-                <div class="ad-status">Not Completed</div>
-            </div>
-            <div class="ad-card" data-ad-id="4">
+<div class="ad-card" data-ad-id="1">
                 <div class="ad-content">
                     <script>
-(function(yfrx){
+(function(cufo){
 var d = document,
     s = d.createElement('script'),
     l = d.scripts[d.scripts.length - 1];
-s.settings = yfrx || {};
-s.src = "\/\/luminoustry.com\/b\/X.VCsCdXGUly0AYwWcdSiDYxWq5ou\/ZFX\/Iz\/QeJm\/9CuSZQUBlNkzP\/TqUJ5FNKzegx1tMFzGMxt\/N\/TQk\/3pORDvUWzbNCAH";
+s.settings = cufo || {};
+s.src = "\/\/luminoustry.com\/bGXcVYs.dBGUl\/0cY\/WwdIiNY\/WF5XuqZBXSIH\/ieJm\/9DuiZkU\/lQkaP-TlUQ5DNszmgh1\/NmjUEytwNYT\/kD3zO\/DcUD2BM\/gJ";
 s.async = true;
 s.referrerPolicy = 'no-referrer-when-downgrade';
 l.parentNode.insertBefore(s, l);
 })({})
 </script>
-                </div>
+
+                 </div>
                 <div class="timer-circle"></div>
                 <div class="ad-status">Not Completed</div>
             </div>
-            <div class="ad-card" data-ad-id="5">
+
+<div class="ad-card" data-ad-id="1">
                 <div class="ad-content">
-                   <script>
-(function(yfrx){
+                    <script>
+(function(cufo){
 var d = document,
     s = d.createElement('script'),
     l = d.scripts[d.scripts.length - 1];
-s.settings = yfrx || {};
-s.src = "\/\/luminoustry.com\/b\/X.VCsCdXGUly0AYwWcdSiDYxWq5ou\/ZFX\/Iz\/QeJm\/9CuSZQUBlNkzP\/TqUJ5FNKzegx1tMFzGMxt\/N\/TQk\/3pORDvUWzbNCAH";
+s.settings = cufo || {};
+s.src = "\/\/luminoustry.com\/bGXcVYs.dBGUl\/0cY\/WwdIiNY\/WF5XuqZBXSIH\/ieJm\/9DuiZkU\/lQkaP-TlUQ5DNszmgh1\/NmjUEytwNYT\/kD3zO\/DcUD2BM\/gJ";
 s.async = true;
 s.referrerPolicy = 'no-referrer-when-downgrade';
 l.parentNode.insertBefore(s, l);
 })({})
 </script>
-                </div>
+
+                 </div>
                 <div class="timer-circle"></div>
                 <div class="ad-status">Not Completed</div>
             </div>
+<div class="ad-card" data-ad-id="1">
+                <div class="ad-content">
+                    <script>
+(function(cufo){
+var d = document,
+    s = d.createElement('script'),
+    l = d.scripts[d.scripts.length - 1];
+s.settings = cufo || {};
+s.src = "\/\/luminoustry.com\/bGXcVYs.dBGUl\/0cY\/WwdIiNY\/WF5XuqZBXSIH\/ieJm\/9DuiZkU\/lQkaP-TlUQ5DNszmgh1\/NmjUEytwNYT\/kD3zO\/DcUD2BM\/gJ";
+s.async = true;
+s.referrerPolicy = 'no-referrer-when-downgrade';
+l.parentNode.insertBefore(s, l);
+})({})
+</script>
+
+                 </div>
+                <div class="timer-circle"></div>
+                <div class="ad-status">Not Completed</div>
+            </div>
+
+
+            <!-- Repeat for other ad cards with different IDs -->
+            <!-- Similar structure for ads 2-4 -->
         </div>
 
-        <div class="unlock-button-container">
-            <button class="unlock-button" disabled>
-                <div class="progress-fill"></div>
-                <span>Continue</span>
-            </button>
-            <div class="lock-container">
-                <i class="fas fa-lock lock-icon" data-lock="1"></i>
-                <i class="fas fa-lock lock-icon" data-lock="2"></i>
-                <i class="fas fa-lock lock-icon" data-lock="3"></i>
-                <i class="fas fa-lock lock-icon" data-lock="4"></i>
+        <div style="text-align: center;">
+            <div class="unlock-button-container">
+                <button class="unlock-button" disabled>
+                    <div class="progress-fill"></div>
+                    <i class="fas fa-lock lock-icon"></i>
+                    <span>Continue</span>
+                </button>
             </div>
         </div>
     </div>
 
     <script>
-        const REQUIRED_TIME = 4000; // 4 seconds
+        const REQUIRED_TIME = 3000; // 3 seconds
         const REQUIRED_ADS = 4;
         let completedAds = new Set();
         let adTimers = {};
 
-        // Load completed ads from session storage
+        // Store the time when user clicked the ad
+        function storeAdClickTime(adId) {
+            const timestamp = new Date().getTime();
+            localStorage.setItem(`ad_${adId}_click`, timestamp);
+        }
+
+        // Check if enough time has passed since ad click
+        function checkAdCompletion(adId) {
+            const clickTime = localStorage.getItem(`ad_${adId}_click`);
+            if (!clickTime) return false;
+
+            const currentTime = new Date().getTime();
+            const timeSpent = currentTime - parseInt(clickTime);
+            return timeSpent >= REQUIRED_TIME;
+        }
+
+        // Handle ad link clicks
+        document.querySelectorAll('.ad-link').forEach(link => {
+            link.addEventListener('click', (e) => {
+                const adId = link.getAttribute('data-ad-id');
+                storeAdClickTime(adId);
+            });
+        });
+
+        // Handle when user returns to the page
+        document.addEventListener('visibilitychange', () => {
+            if (document.visibilityState === 'visible') {
+                document.querySelectorAll('.ad-card').forEach(adCard => {
+                    const adId = adCard.dataset.adId;
+                    if (!completedAds.has(adId) && checkAdCompletion(adId)) {
+                        completeAd(adId);
+                        localStorage.removeItem(`ad_${adId}_click`);
+                    }
+                });
+            }
+        });
+
         const loadCompletedAds = () => {
             const saved = sessionStorage.getItem('completedAds');
             if (saved) {
                 completedAds = new Set(JSON.parse(saved));
                 updateProgress();
+                // Update UI for completed ads
+                completedAds.forEach(adId => {
+                    const adCard = document.querySelector(`[data-ad-id="${adId}"]`);
+                    if (adCard) {
+                        const adStatus = adCard.querySelector('.ad-status');
+                        adStatus.textContent = 'Completed';
+                        adStatus.classList.add('completed');
+                    }
+                });
             }
         };
 
-        // Save completed ads to session storage
         const saveCompletedAds = () => {
             sessionStorage.setItem('completedAds', JSON.stringify([...completedAds]));
         };
 
-        // Update progress bar and locks
         const updateProgress = () => {
             const progressFill = document.querySelector('.progress-fill');
             const button = document.querySelector('.unlock-button');
+            const lockIcon = button.querySelector('.lock-icon');
             const completedCount = completedAds.size;
             const progressPercent = (completedCount / REQUIRED_ADS) * 100;
             
             progressFill.style.width = `${progressPercent}%`;
-            
-            // Update locks
-            document.querySelectorAll('.lock-icon').forEach((lock, index) => {
-                if (index < completedCount) {
-                    lock.classList.remove('fa-lock');
-                    lock.classList.add('fa-lock-open', 'unlocked');
-                }
-            });
 
-            // Check if enough ads completed
             if (completedCount >= REQUIRED_ADS) {
                 button.disabled = false;
                 button.classList.add('unlocked');
+                lockIcon.classList.remove('fa-lock');
+                lockIcon.classList.add('fa-lock-open');
             }
         };
 
-        // Handle ad completion
         const completeAd = (adId) => {
             const adCard = document.querySelector(`[data-ad-id="${adId}"]`);
             const adStatus = adCard.querySelector('.ad-status');
             
-            completedAds.add(adId);
-            adStatus.textContent = 'Completed';
-            adStatus.classList.add('completed');
-            
-            saveCompletedAds();
-            updateProgress();
+            if (!completedAds.has(adId)) {
+                completedAds.add(adId);
+                adStatus.textContent = 'Completed';
+                adStatus.classList.add('completed');
+                
+                saveCompletedAds();
+                updateProgress();
+            }
         };
 
-        // Setup visibility change handling for each ad
-        document.querySelectorAll('.ad-card').forEach(adCard => {
-            const adId = adCard.dataset.adId;
-            const timerCircle = adCard.querySelector('.timer-circle');
-            const adStatus = adCard.querySelector('.ad-status');
-
-            adCard.addEventListener('click', () => {
-                if (!completedAds.has(adId)) {
-                    adTimers[adId] = new Date().getTime();
-                }
-            });
-
-            // Handle visibility change
-            document.addEventListener('visibilitychange', () => {
-                if (document.visibilityState === 'visible' && adTimers[adId]) {
-                    const timeSpent = new Date().getTime() - adTimers[adId];
-                    
-                    timerCircle.classList.add('show');
-                    
-                    if (timeSpent < REQUIRED_TIME) {
-                        adStatus.textContent = `Stay for ${Math.ceil((REQUIRED_TIME - timeSpent) / 1000)}s more`;
-                        setTimeout(() => {
-                            timerCircle.classList.remove('show');
-                            adStatus.textContent = 'Not Completed';
-                        }, 2000);
-                    } else {
-                        completeAd(adId);
-                        timerCircle.classList.remove('show');
-                    }
-                    
-                    delete adTimers[adId];
-                }
-            });
-        });
-
-        // Handle button click
         document.querySelector('.unlock-button').addEventListener('click', () => {
             if (completedAds.size >= REQUIRED_ADS) {
                 window.location.href = "https://example.com";
             }
         });
 
-        // Load saved progress on page load
         loadCompletedAds();
     </script>
 </body>
