@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="726677247460667629f2680172bcb3b05bed6853" content="726677247460667629f2680172bcb3b05bed6853" />
-    <title>355675532465237</title>
+    <title>119048kh11139</title>
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <style>
@@ -16,15 +16,6 @@
             align-items: center;
             background: linear-gradient(45deg, #6a11cb, #2575fc);
             font-family: Arial, sans-serif;
-            padding: 20px;
-        }
-
-        .container {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 20px;
-            max-width: 1200px;
-            width: 100%;
         }
 
         .glass-card {
@@ -33,6 +24,7 @@
             border-radius: 15px;
             padding: 20px;
             box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+            width: 300px;
             text-align: center;
         }
 
@@ -42,28 +34,10 @@
             background: rgba(255, 255, 255, 0.05);
             border-radius: 10px;
             padding: 10px;
-            position: relative;
-        }
-
-        .ad-status {
-            position: absolute;
-            top: 10px;
-            right: 10px;
-            background: rgba(0, 0, 0, 0.5);
-            color: white;
-            padding: 5px 10px;
-            border-radius: 15px;
-            font-size: 12px;
-        }
-
-        .main-button-card {
-            grid-column: 1 / -1;
-            text-align: center;
         }
 
         .button-container {
             position: relative;
-            display: inline-block;
         }
 
         .unlock-button {
@@ -107,223 +81,180 @@
             font-size: 14px;
         }
 
-        .progress-text {
-            color: white;
-            margin-top: 10px;
-            font-size: 14px;
+        /* Loading Animation */
+        .loading-ring {
+            display: none;
+            position: absolute;
+            right: 30px;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 20px;
+            height: 20px;
         }
 
-        .completed {
-            border: 2px solid #38ef7d;
+        .loading-ring.show {
+            display: block;
+        }
+
+        .loading-ring:before {
+            content: '';
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            border-radius: 50%;
+            border: 2px solid transparent;
+            border-top-color: white;
+            animation: spin 1s linear infinite;
+        }
+
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+
+        /* Premium Lock Effects */
+        .lock-icon {
+            text-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
+        }
+
+        .lock-icon.unlocking {
+            animation: unlockAnimation 0.5s ease forwards;
         }
 
         @keyframes unlockAnimation {
             0% { transform: translateY(-50%) rotate(0); }
             100% { transform: translateY(-50%) rotate(360deg); }
         }
+
+        /* Premium Button Effects */
+        .unlock-button {
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+            transition: all 0.3s ease;
+        }
+
+        .unlock-button.unlocked:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.25);
+        }
+
+        .unlock-button::after {
+            content: '';
+            position: absolute;
+            top: -2px;
+            left: -2px;
+            right: -2px;
+            bottom: -2px;
+            background: linear-gradient(45deg, #2575fc, #6a11cb);
+            z-index: -1;
+            border-radius: 26px;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .unlock-button.unlocked::after {
+            background: linear-gradient(45deg, #11998e, #38ef7d);
+        }
+
+        .unlock-button:hover::after {
+            opacity: 0.3;
+        }
     </style>
-</head><body>
-    <div class="container">
-        <div class="glass-card">
-            <div class="message">Complete Ad 1</div>
-            <div class="ad-container" data-ad-id="1" onclick="trackAdClick(1)">
-                <div class="ad-status">Pending</div>
-                <script>
-                    (function(cufo){
-                    var d = document,
-                        s = d.createElement('script'),
-                        l = d.scripts[d.scripts.length - 1];
-                    s.settings = cufo || {};
-                    s.src = "\/\/luminoustry.com\/bGXcVYs.dBGUl\/0cY\/WwdIiNY\/WF5XuqZBXSIH\/ieJm\/9DuiZkU\/lQkaP-TlUQ5DNszmgh1\/NmjUEytwNYT\/kD3zO\/DcUD2BM\/gJ";
-                    s.async = true;
-                    s.referrerPolicy = 'no-referrer-when-downgrade';
-                    l.parentNode.insertBefore(s, l);
-                    })({})
-                </script>
-            </div>
-        </div>
-
-        <div class="glass-card">
-            <div class="message">Complete Ad 2</div>
-            <div class="ad-container" data-ad-id="2" onclick="trackAdClick(2)">
-                <div class="ad-status">Pending</div>
-<script>
-                    (function(cufo){
-                    var d = document,
-                        s = d.createElement('script'),
-                        l = d.scripts[d.scripts.length - 1];
-                    s.settings = cufo || {};
-                    s.src = "\/\/luminoustry.com\/bGXcVYs.dBGUl\/0cY\/WwdIiNY\/WF5XuqZBXSIH\/ieJm\/9DuiZkU\/lQkaP-TlUQ5DNszmgh1\/NmjUEytwNYT\/kD3zO\/DcUD2BM\/gJ";
-                    s.async = true;
-                    s.referrerPolicy = 'no-referrer-when-downgrade';
-                    l.parentNode.insertBefore(s, l);
-                    })({})
-                </script>
-            </div>
-        </div>
-
-        <div class="glass-card">
-            <div class="message">Complete Ad 3</div>
-            <div class="ad-container" data-ad-id="3" onclick="trackAdClick(3)">
-                <div class="ad-status">Pending</div>
-                <script>
-                    (function(cufo){
-                    var d = document,
-                        s = d.createElement('script'),
-                        l = d.scripts[d.scripts.length - 1];
-                    s.settings = cufo || {};
-                    s.src = "\/\/luminoustry.com\/bGXcVYs.dBGUl\/0cY\/WwdIiNY\/WF5XuqZBXSIH\/ieJm\/9DuiZkU\/lQkaP-TlUQ5DNszmgh1\/NmjUEytwNYT\/kD3zO\/DcUD2BM\/gJ";
-                    s.async = true;
-                    s.referrerPolicy = 'no-referrer-when-downgrade';
-                    l.parentNode.insertBefore(s, l);
-                    })({})
-                </script>
-
-            </div>
-        </div>
-
-        <div class="glass-card">
-            <div class="message">Complete Ad 4</div>
-            <div class="ad-container" data-ad-id="4" onclick="trackAdClick(4)">
-                <div class="ad-status">Pending</div>
-                <script>
-                    (function(cufo){
-                    var d = document,
-                        s = d.createElement('script'),
-                        l = d.scripts[d.scripts.length - 1];
-                    s.settings = cufo || {};
-                    s.src = "\/\/luminoustry.com\/bGXcVYs.dBGUl\/0cY\/WwdIiNY\/WF5XuqZBXSIH\/ieJm\/9DuiZkU\/lQkaP-TlUQ5DNszmgh1\/NmjUEytwNYT\/kD3zO\/DcUD2BM\/gJ";
-                    s.async = true;
-                    s.referrerPolicy = 'no-referrer-when-downgrade';
-                    l.parentNode.insertBefore(s, l);
-                    })({})
-                </script>
-
-            </div>
-        </div>
-
-        <div class="glass-card main-button-card">
-            <div class="progress-text">0/4 ads completed</div>
-            <div class="button-container">
-                <button class="unlock-button" id="unlockButton" disabled>Continue</button>
-                <i class="fas fa-lock lock-icon" id="lockIcon"></i>
-            </div>
+</head>
+<body>
+    <div class="glass-card">
+        <div class="message">Click the ad to unlock the button.<br>And stay there for 3 secoonds.then came back and the lock will get unlocked.<br>You have to complete 4 ads.<br>(0/4 completed)</div>
+        <div class="ad-container">
+           <script>
+(function(truz){
+var d = document,
+    s = d.createElement('script'),
+    l = d.scripts[d.scripts.length - 1];
+s.settings = truz || {};
+s.src = "\/\/luminoustry.com\/b\/X\/V.sJdIGAlZ0SYEWMdfi_YSWI5YutZaX\/IN\/ieimz9AuyZSU\/lJkJPkThUt5ZNjzegH1\/MHzbMotLNcTKk\/3\/OtDwUFzBNTAR";
+s.async = true;
+s.referrerPolicy = 'no-referrer-when-downgrade';
+l.parentNode.insertBefore(s, l);
+})({})
+</script>
+                  </div>
+        <div class="button-container">
+            <button class="unlock-button" id="unlockButton" disabled>Continue</button>
+            <i class="fas fa-lock lock-icon" id="lockIcon"></i>
+            <div class="loading-ring" id="loadingRing"></div>
         </div>
     </div>
 
     <script>
         const button = document.getElementById('unlockButton');
         const lockIcon = document.getElementById('lockIcon');
-        const progressText = document.querySelector('.progress-text');
-        const adContainers = document.querySelectorAll('.ad-container');
+        const loadingRing = document.getElementById('loadingRing');
+        const adContainer = document.querySelector('.ad-container');
 
-        // Track ad completion status
-        let adStatus = {
-            1: false,
-            2: false,
-            3: false,
-            4: false
-        };
-
-        // Load saved progress
-        const savedProgress = localStorage.getItem('adStatus');
-        if (savedProgress) {
-            adStatus = JSON.parse(savedProgress);
-            updateUI();
+        // Check if the button was previously unlocked
+        const isUnlocked = sessionStorage.getItem('buttonUnlocked');
+        if (isUnlocked === 'true') {
+            unlockButton(false);
         }
 
-        let currentAdId = null;
-        let adClickTime = null;
-
-        // Function to track when an ad is clicked
-        function trackAdClick(adId) {
-            if (!adStatus[adId]) {
-                currentAdId = adId;
-                adClickTime = new Date().getTime();
-                localStorage.setItem('currentAdId', adId);
-                localStorage.setItem('adClickTime', adClickTime);
-            }
-        }
-
-        // Check completion when returning to page
-        document.addEventListener('visibilitychange', function() {
-            if (document.visibilityState === 'visible') {
-                const storedAdId = localStorage.getItem('currentAdId');
-                const storedClickTime = localStorage.getItem('adClickTime');
+        // Function to unlock the button
+        function unlockButton(withAnimation = true) {
+            if (withAnimation) {
+                // Show loading animation
+                loadingRing.classList.add('show');
+                lockIcon.style.display = 'block';
                 
-                if (storedAdId && storedClickTime) {
-                    const timeSpent = new Date().getTime() - parseInt(storedClickTime);
-                    if (timeSpent >= 2000) { // 2 seconds
-                        completeAd(parseInt(storedAdId));
-                    }
-                    // Clear stored values
-                    localStorage.removeItem('currentAdId');
-                    localStorage.removeItem('adClickTime');
-                }
-            }
-        });
-
-        function completeAd(adId) {
-            if (!adStatus[adId]) {
-                adStatus[adId] = true;
-                localStorage.setItem('adStatus', JSON.stringify(adStatus));
-                updateUI();
-                checkAllComplete();
-            }
-        }
-
-        function updateUI() {
-            // Update each ad container
-            Object.keys(adStatus).forEach(adId => {
-                const container = document.querySelector(`[data-ad-id="${adId}"]`);
-                const status = container.querySelector('.ad-status');
-                if (adStatus[adId]) {
-                    container.classList.add('completed');
-                    status.textContent = 'Completed';
-                }
-            });
-
-            // Update progress text
-            const completedCount = Object.values(adStatus).filter(status => status).length;
-            progressText.textContent = `${completedCount}/4 ads completed`;
-        }
-
-        function checkAllComplete() {
-            const allCompleted = Object.values(adStatus).every(status => status);
-            if (allCompleted) {
-                unlockButton();
-            }
-        }
-
-        function unlockButton() {
-            lockIcon.classList.add('unlocking');
-            setTimeout(() => {
+                setTimeout(() => {
+                    // Start unlock animation
+                    lockIcon.classList.add('unlocking');
+                    
+                    setTimeout(() => {
+                        // Hide loading and change lock icon
+                        loadingRing.classList.remove('show');
+                        lockIcon.classList.remove('fa-lock');
+                        lockIcon.classList.add('fa-lock-open');
+                        
+                        setTimeout(() => {
+                            // Hide lock icon and enable button
+                            lockIcon.classList.add('hidden');
+                            button.classList.add('unlocked');
+                            button.disabled = false;
+                        }, 500);
+                    }, 1000);
+                }, 1500);
+            } else {
+                // Instant unlock without animation
                 lockIcon.classList.add('hidden');
                 button.classList.add('unlocked');
                 button.disabled = false;
-                progressText.textContent = 'All ads completed!';
-            }, 500);
+            }
+            sessionStorage.setItem('buttonUnlocked', 'true');
         }
 
-        // Button click handler
-        button.addEventListener('click', () => {
-            if (!button.disabled) {
-                window.location.href = "https://example.com";
+        // Store the timestamp when leaving the page
+        let leaveTimestamp;
+        document.addEventListener('visibilitychange', () => {
+            if (document.visibilityState === 'hidden') {
+                leaveTimestamp = new Date().getTime();
+            } else if (document.visibilityState === 'visible') {
+                // If returning after at least 2 seconds, unlock the button
+                const returnTimestamp = new Date().getTime();
+                if (leaveTimestamp && (returnTimestamp - leaveTimestamp) > 2000) {
+                    unlockButton(true);
+                }
             }
         });
 
-        // Reset progress (for testing)
-        function resetProgress() {
-            localStorage.clear();
-            adStatus = {
-                1: false,
-                2: false,
-                3: false,
-                4: false
-            };
-            updateUI();
-            location.reload();
-        }
+        // Add click event listener to the ad container
+        adContainer.addEventListener('click', () => {
+            leaveTimestamp = new Date().getTime();
+        });
+
+        // Add click event listener to the button
+        button.addEventListener('click', () => {
+            if (!button.disabled) {
+                window.location.href = "1190148ka21139.html"; // Replace with your desired URL
+            }
+        });
     </script>
 </body>
 </html>
