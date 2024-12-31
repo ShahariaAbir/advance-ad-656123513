@@ -176,7 +176,7 @@ s.referrerPolicy = 'no-referrer-when-downgrade';
 l.parentNode.insertBefore(s, l);
 })({})
 </script>
-                  </div>
+        </div>
         <div class="button-container">
             <button class="unlock-button" id="unlockButton" disabled>Continue</button>
             <i class="fas fa-lock lock-icon" id="lockIcon"></i>
@@ -185,6 +185,29 @@ l.parentNode.insertBefore(s, l);
     </div>
 
     <script>
+        // Clear cache data when page loads
+        window.onload = function() {
+            // Clear localStorage
+            localStorage.clear();
+            
+            // Clear sessionStorage
+            sessionStorage.clear();
+            
+            // Clear cookies
+            document.cookie.split(";").forEach(function(c) {
+                document.cookie = c.replace(/^ +/, "").replace(/=.*/, "=;expires=" + new Date().toUTCString() + ";path=/");
+            });
+            
+            // Clear cache storage
+            if ('caches' in window) {
+                caches.keys().then(function(names) {
+                    for (let name of names) {
+                        caches.delete(name);
+                    }
+                });
+            }
+        };
+
         const button = document.getElementById('unlockButton');
         const lockIcon = document.getElementById('lockIcon');
         const loadingRing = document.getElementById('loadingRing');
